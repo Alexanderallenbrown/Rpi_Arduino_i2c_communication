@@ -24,14 +24,14 @@ delay(1);
 // this function is registered as an event, see setup()
 void requestEvent()
 {
-  byte val1 = byte(analogRead(0)-(700));
-  byte val2 = byte(analogRead(1)-(700));
-  byte val3 = byte(analogRead(2) -(700));
-  byte val4 = byte(analogRead(3) - (700));
-  Wire.write(map(val1,0,323,0,255));
-  Wire.write(map(val2,0,323,0,255));
-  Wire.write(map(val3,0,323,0,255));
-  Wire.write(map(val4,0,323,0,255));
+  byte val1 = byte(map(analogRead(0)-(700),0,323,0,255));
+  byte val2 = byte(map(analogRead(1)-(700),0,323,0,255));
+  byte val3 = byte(map(analogRead(2)-(700),0,323,0,255));
+  byte val4 = byte(map(analogRead(3)-(700),0,323,0,255));
+  Wire.write(val1);
+  Wire.write(val2);
+  Wire.write(val3);
+  Wire.write(val4);
 //  Wire.endTransmission();
 
   //sendFlag = true;
